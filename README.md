@@ -10,11 +10,20 @@ Also, all external dependencies such as web services are known as external layer
 
 <br/>
 
-Implementation : .Net 6
+Implementation : .NET Core 6
 <br/>
 First step: implementation of the architecture 
+<br/>
 Use IOC
+<br/>
+To use Ninject IOC (Inversion of Control) in an MVC application with .NET Core 6, you need to Install the required NuGet packages:
+<br/>
+Install-Package Ninject.Web.AspNetCore 
+<br/>
+Install-Package Ninject.Extensions.Conventions
+<br/>
 Use UnitOfWork architecture
+<br/>
 The purpose of the first step is to implement the Application Core layers 
 <br/>
 to be continuous .....
