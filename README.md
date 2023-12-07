@@ -13,5 +13,8 @@ Also, all external dependencies such as web services are known as external layer
 Implementation : .Net 6
 <br/>
 First step: implementation of the architecture 
+Use IOC
+Use UnitOfWork architecture
+The purpose of the first step is to implement the Application Core layers 
 <br/>
-continuous .....
+to be continuous .....
