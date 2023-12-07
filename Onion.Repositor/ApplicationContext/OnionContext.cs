@@ -2,12 +2,7 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Onion.Data.Access;
 using Onion.Data.Account_CoupledClass;
-using System;
-using System.Collections.Generic;
 
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Onion.Repositor.ApplicationContext
 {
@@ -25,16 +20,23 @@ namespace Onion.Repositor.ApplicationContext
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> userRoles { get; set; }
 
-
-    }
-
-    public class AppDbContextFactory : IDesignTimeDbContextFactory<OnionContext>
-    {
-        public OnionContext CreateDbContext(string[] args)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<OnionContext>();
-            optionsBuilder.UseSqlServer("Data Source=MOJIX-PARIX\\MOJIX_SERVER;Initial Catalog=Onion_Db;Integrated Security=True");
-            return new OnionContext(optionsBuilder.Options);
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=MOJIX-PARIX\\MOJIX_SERVER;Initial Catalog=Onion_Db;Integrated Security=True");
+            }
         }
     }
+
+
+    //public class AppDbContextFactory : IDesignTimeDbContextFactory<OnionContext>
+    //{
+    //    public OnionContext CreateDbContext(string[] args)
+    //    {
+    //        var optionsBuilder = new DbContextOptionsBuilder<OnionContext>();
+    //        optionsBuilder.UseSqlServer("Data Source=MOJIX-PARIX\\MOJIX_SERVER;Initial Catalog=Onion_Db;Integrated Security=True");
+    //        return new OnionContext(optionsBuilder.Options);
+    //    }
+    //}
 }

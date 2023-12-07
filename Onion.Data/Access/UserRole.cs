@@ -16,5 +16,7 @@ namespace Onion.Data.Access
         public User User { get; set; }
 
         public Role Role { get; set; }
+
+        public bool IsDelete { get; set; }
     }
 }

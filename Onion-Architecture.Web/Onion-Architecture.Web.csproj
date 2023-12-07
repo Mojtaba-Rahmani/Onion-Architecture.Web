@@ -5,17 +5,28 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Onion_Architecture.Web</RootNamespace>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>True</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageReference Include="Ninject" Version="3.3.6" />
+    <PackageReference Include="Ninject.Extensions.Conventions" Version="3.3.0" />
+    <PackageReference Include="Ninject.Web.AspNetCore" Version="6.0.0" />
+    <PackageReference Include="ServiceStack" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Onion.Data\Onion.Data.csproj" />
     <ProjectReference Include="..\Onion.Repositor\Onion.Repositor.csproj" />
+    <ProjectReference Include="..\Onion.Service\Onion.Service.csproj" />
   </ItemGroup>
 
 </Project>

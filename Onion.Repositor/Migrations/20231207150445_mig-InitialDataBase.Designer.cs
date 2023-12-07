@@ -11,8 +11,8 @@ using Onion.Repositor.ApplicationContext;
 namespace Onion.Repositor.Migrations
 {
     [DbContext(typeof(OnionContext))]
-    [Migration("20231204174507_InitialOnionDatabaseSqlnew")]
-    partial class InitialOnionDatabaseSqlnew
+    [Migration("20231207150445_mig-InitialDataBase")]
+    partial class migInitialDataBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,6 +56,9 @@ namespace Onion.Repositor.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int");

@@ -1,7 +1,7 @@
 ﻿using Onion.Data.Account_CoupledClass;
 using Onion.Repositor.DataTransfer;
 using Onion.Service.InterFaces;
-
+using Onion.Data.Access;
 
 namespace Onion.Service.Implementation
 {
@@ -9,7 +9,7 @@ namespace Onion.Service.Implementation
     {
         private IRepository<User> _userRepository;
 
-        public UserService(IRepository<User> _userRepository)
+        public UserService(IRepository<User> _userRepository, Repository<UserRole> repository)
         {
             this._userRepository = _userRepository;
         }
